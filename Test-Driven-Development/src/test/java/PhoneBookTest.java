@@ -35,10 +35,11 @@ public class PhoneBookTest {
 
     @Test
     void testAdd() {
+        PhoneBook phoneBook1 = new PhoneBook();
         String name = "Stefan";
         String number = "523-23-13";
-        int expected = 6;
-        assertEquals(expected, phoneBook.add(name, number));
+        int expected = 1;
+        assertEquals(expected, phoneBook1.add(name, number));
     }
 
     @ParameterizedTest
@@ -55,8 +56,7 @@ public class PhoneBookTest {
 
     @Test
     void testPrintAllNames(){
-        String[] expected = {"Anet","Anna","Ben","Den","Stefan","Tom"};
+        String[] expected = {"Anet","Anna","Ben","Den","Tom"};
         assertArrayEquals(expected, phoneBook.printAllNames());
-
     }
 }

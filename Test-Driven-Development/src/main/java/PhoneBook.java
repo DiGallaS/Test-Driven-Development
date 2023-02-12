@@ -51,6 +51,12 @@ public class PhoneBook {
     }
 
     public String[] printAllNames(){
-        return new String[]{};
+        String[] phoneName = new String[phonebook.size()];
+        int i = 0;
+        for (People people : phonebook){
+            phoneName[i] = people.getName();
+            i++;
+        }
+        return phoneName;
     }
 }
