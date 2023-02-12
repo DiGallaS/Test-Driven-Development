@@ -45,4 +45,10 @@ public class PhoneBookTest {
     void testFindByNumber(String expected, String number){
         assertEquals(expected, phoneBook.findByNumber(number));
     }
+
+    @ParameterizedTest
+    @CsvSource(value = {"Den,523-21-87","Ben,523-21-21","Anet,523-21-29"})
+    void testFindByName(String name, String expected){
+        assertEquals(expected, phoneBook.findByName(name));
+    }
 }
