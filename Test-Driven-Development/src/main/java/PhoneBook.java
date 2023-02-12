@@ -11,6 +11,24 @@ public class PhoneBook {
     }
 
     public String findByNumber(String number){
+        List<People> sortNumber = new ArrayList<>();
+        sortNumber.addAll(phonebook);
+        sortNumber.sort(Comparator.comparing(People::getNumber));
+
+        int first = 0;
+        int last = sortNumber.size()-1;
+
+        while (first <= last ){
+            int medium = (first + last) / 2;
+            String mediumNumber = sortNumber.get(medium).getNumber();
+            if (mediumNumber.compareTo(number) == 0){
+                return sortNumber.get(medium).getName();
+            }else if (mediumNumber.compareTo(number) < 0){
+                first = medium + 1;
+            }else if (mediumNumber.compareTo(number) > 0){
+                last = medium - 1;
+            }
+        }
         return null;
     }
 }
