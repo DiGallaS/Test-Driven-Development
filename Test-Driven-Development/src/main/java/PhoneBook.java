@@ -33,6 +33,20 @@ public class PhoneBook {
     }
 
     public String findByName(String name){
+        int first = 0;
+        int last = phonebook.size() - 1;
+
+        while (first <= last ){
+            int medium = (first + last) / 2;
+            String mediumName = phonebook.get(medium).getName();
+            if (mediumName.compareTo(name) == 0){
+                return phonebook.get(medium).getNumber();
+            }else if (mediumName.compareTo(name) < 0){
+                first = medium + 1;
+            }else if (mediumName.compareTo(name) > 0){
+                last = medium - 1;
+            }
+        }
         return null;
     }
 }
