@@ -49,4 +49,8 @@ public class PhoneBook {
         }
         return null;
     }
+
+    public String[] printAllNames(){
+        return new String[]{};
+    }
 }
